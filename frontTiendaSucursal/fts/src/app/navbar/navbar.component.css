@@ -1,0 +1,43 @@
+.menu{
+	float: left;
+	line-height:30px;
+    margin: -150px -40px;
+	
+}
+.menu ul{
+	display: flex;
+	list-style: none;
+}
+.menu a{
+    width: 100%;
+	height:50px;
+	background: #252850;
+	display: block;
+	padding: 10px 20px;
+	text-decoration: none;
+	color: white;
+	transition: all 500ms ease;
+    position: center;
+}
+.menu a:hover{
+	background: #252850;
+	color: white;
+	opacity: 0.8;
+	
+}
+
+.menu .submenu{
+	background: white;
+	box-shadow: 3px 10px 10px rgba(0,0,0,0.2);
+	display: none;	
+}
+.menu .submenu li a{
+	line-height: 30px;
+}
+
+.menu ul li a:hover + ul, .menu .submenu:hover{
+	display:block;
+}
+
+
+

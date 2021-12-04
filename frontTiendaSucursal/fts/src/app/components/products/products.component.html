@@ -16,33 +16,43 @@
             <button class="btn btn-primary btn-block" (click)="onUpload()">LOAD FILE</button>
         </div>
         <div class="container">
-            <h4 *ngFor="let dato of resultados; let i=index" style="color: white">
-                file uploaded successfully
+            <h4 *ngFor="let dato of resultados; let i=index; let ultimo=last" style="color: white">
+                <div class="alert alert-success" role="alert" *ngIf="ultimo">
+                    file uploaded successfully
+                  </div>
+                  <div class="alert alert-success" role="alert" *ngIf="dato==500">
+                    Error del servidor, comuniquese con el administrador
+                  </div>
+                  <div class="alert alert-success" role="alert" *ngIf="dato==400 || dato==404">
+                    Error  en la solicitud
+                  </div>
+                
             </h4>
         </div>
     </div>
 </div>
-<!-- <div>
-    <table class="table" *ngIf="records.length > 0">
-        <thead>
-            <tr>
-                <th scope="col">Code </th>
-                <th scope="col">Name </th>
-                <th scope="col">NitProvider </th>
-                <th scope="col">Purchase Price </th>
-                <th scope="col">Iva </th>
-                <th scope="col">Sale Price </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let record of records;let i = index;">    
-                <td> <span>{{record.code}}</span> </td>    
-                <td> <span>{{record.name}}</span> </td>    
-                <td> <span>{{record.nitprovider}}</span> </td>    
-                <td> <span>{{record.purchaseprice}}</span> </td>    
-                <td> <span>{{record.iva}}</span> </td>    
-                <td> <span>{{record.saleprice}}</span> </td>    
+<br>
+<br>
+<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+    <div class=" card">
+      <div class=" card-header">
+        <h4 class=" card-title"><i class="fas fa-table"></i> List of Products</h4>
+      </div>
+      <div class=" card-body">
+        <div class="container mt-5">
+          <table class="table table-bordered table-striped table-hover compact nowrap stripe hover" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+            <tbody>
+              <tr *ngFor="let producto of contenido" class="">
+                <td class="text-center">{{producto.code}}</td>
+                <td class="text-center">{{producto.name}}</td>
+                <td class="text-center">{{producto.nitprovider}}</td>
+                <td class="text-center">{{producto.purchaseprice}}</td>
+                <td class="text-center">{{producto.iva}}</td>
+                <td class="text-center">{{producto.saleprice}}</td>
               </tr>
-        </tbody>
-    </table>
-</div> -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { data } from 'jquery';
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +11,7 @@ export class ProductsService {
   constructor(private httpobject:HttpClient) { }
 
   resultados=Array();
+
 
   deleteProduct(){
     this.httpobject.delete(this.apiURL).subscribe(data => {

@@ -1,0 +1,51 @@
+<app-navbar></app-navbar>
+<div class="container col-lg-2">
+    <div class="form-group text-center">
+        <form action="/cliente/crearCliente" method="POST">
+            <div class="form-group text-center">
+                <p style="color:white">
+                    <strong>CREAR CLIENTE</strong>
+                </p>
+                <img src="assets/usuario.png" height="80" width="80" />
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="text" name="cedula"
+                    id="cedula" value=""
+                    placeholder="Ingrese Cédula" style="text-align: center">
+            </div>
+            
+            <div class="form-group">
+                <input class="form-control" type="text" name="nombre"
+                    id="nombre" value=""
+                    placeholder="Ingrese Nombre Completo" style="text-align: center">
+            </div>
+            
+            <div class="form-group">
+                <input class="form-control" type="text" name="direccion"
+                    id="direccion" value=""
+                    placeholder="Ingrese Dirección" style="text-align: center">
+            </div>
+            
+            <div class="form-group">
+                <input class="form-control" type="text" name="telefono"
+                    id="telefono" value=""
+                    placeholder="Ingrese Número de Teléfono" style="text-align: center">
+            </div>
+            
+            <div class="form-group">
+                <input class="form-control" type="text" name="correo"
+                    id="correo" value=""
+                    placeholder="Ingrese Correo Electrónico"
+                    style="text-align: center">
+            </div>
+            <br>
+            <div>
+            <input class="btn btn-primary btn-md" type="submit"
+                name="btnActualizar" value="CREAR" >
+            </div>
+            <br/>
+            <div style="color: white"></div>
+            <div style="color: red"><b></b></div>
+        </form>
+    </div>
+</div>

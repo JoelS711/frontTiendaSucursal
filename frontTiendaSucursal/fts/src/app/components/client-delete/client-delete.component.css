@@ -1,0 +1,18 @@
+.container{
+    background-color: #252850;
+    border-radius: 10px;
+    padding: 25px;
+    margin-top: 150px;
+}
+
+#cuadro{
+	margin: auto;
+	margin-top: 30px;
+	width: 900px;
+	background: #696969;
+	color: #ffffff;
+	font-size: 16px;
+	padding: 10px 10px 10px 10px;
+	border-radius: 6px;
+	
+}

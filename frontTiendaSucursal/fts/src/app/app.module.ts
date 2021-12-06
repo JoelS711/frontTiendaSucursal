@@ -9,13 +9,15 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { LoginComponent } from './login/login.component';
 import { DataTablesModule } from 'angular-datatables';
+import { SalesComponent } from './components/sales/sales.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     routingComponents,
-    LoginComponent
+    LoginComponent,
+    SalesComponent
     
   ],
   imports: [

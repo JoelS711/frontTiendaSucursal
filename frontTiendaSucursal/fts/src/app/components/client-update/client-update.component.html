@@ -1,1 +1,80 @@
-<p>client-update works!</p>
+<app-navbar></app-navbar>
+<div class="container col-lg-2">
+    <div class="form-group text-center">
+            <div class="form-group text-center">
+                <p style="color:white">
+                    <strong>UPDATE CLIENT</strong>
+                </p>
+                <img src="assets/usuario.png" height="80" width="80" />
+            </div>
+            <br>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Identification" [(ngModel)]="cedulaupdate">
+                <span class="input-group-text">
+                    <i *ngIf="cedulaupdate!=undefined && cedulaupdate!=''"
+                        class="fas fa-check correctovalidacion"></i>
+
+                    <i *ngIf="cedulaupdate==undefined || cedulaupdate==''"
+                        class="fas fa-times errorvalidacion"></i>
+                </span>
+            </div>
+
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Address" [(ngModel)]="direccionupdate">
+                <span class="input-group-text">
+
+                    <i *ngIf="direccionupdate!=undefined && direccionupdate!=''"
+                        class="fas fa-check correctovalidacion"></i>
+
+                    <i *ngIf="direccionupdate==undefined || direccionupdate==''"
+                        class="fas fa-times errorvalidacion"></i>
+
+                </span>
+            </div>
+
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="E-mail" [(ngModel)]="emailupdate">
+                <span class="input-group-text">
+
+                    <i *ngIf="emailupdate!=undefined && emailupdate!=''"
+                        class="fas fa-check correctovalidacion"></i>
+
+                    <i *ngIf="emailupdate==undefined || emailupdate==''"
+                        class="fas fa-times errorvalidacion"></i>
+
+                </span>
+            </div>
+
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Name" [(ngModel)]="nombreupdate">
+                <span class="input-group-text">
+
+                    <i *ngIf="nombreupdate!=undefined && nombreupdate!=''"
+                        class="fas fa-check correctovalidacion"></i>
+
+                    <i *ngIf="nombreupdate==undefined || nombreupdate==''"
+                        class="fas fa-times errorvalidacion"></i>
+
+                </span>
+            </div>
+
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Phone" [(ngModel)]="telefonoupdate">
+                <span class="input-group-text">
+
+                    <i *ngIf="telefonoupdate!=undefined && telefonoupdate!=''"
+                        class="fas fa-check correctovalidacion"></i>
+
+                    <i *ngIf="telefonoupdate==undefined || telefonoupdate==''"
+                        class="fas fa-times errorvalidacion"></i>
+
+                </span>
+            </div>
+            <br>
+            <button (click)="actualizarCliente()" class="btn btn-primary btn-md" type="submit"
+            name="btnActualizar">UPDATE</button>
+            <br/>
+            <div *ngIf="codeput==200" style="color: white">update successfully</div>
+            <div *ngIf="codeput==204" style="color: red">client doesn't exists</div>
+    </div>
+</div>

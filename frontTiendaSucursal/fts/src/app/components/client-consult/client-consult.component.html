@@ -1,1 +1,54 @@
-<p>client-consult works!</p>
+<app-navbar></app-navbar>
+<div class="container col-lg-2">
+    <div class="form-group text-center">
+            <div class="form-group text-center">
+                <p style="color:white">
+                    <strong>CONSULT CLIENT</strong>
+                </p>
+                <img src="assets/usuario.png" height="80" width="80" />
+            </div>
+            <br>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Identification" [(ngModel)]="cedulasearch">
+                <span class="input-group-text">
+                    <i *ngIf="cedulasearch!=undefined && cedulasearch!=''"
+                        class="fas fa-check correctovalidacion"></i>
+
+                    <i *ngIf="cedulasearch==undefined || cedulasearch==''"
+                        class="fas fa-times errorvalidacion"></i>
+                </span>
+            </div>
+
+            
+            <br>
+            <button (click)="buscarCliente()" class="btn btn-primary btn-md" type="submit"
+            >SEARCH</button>
+            <br/>
+
+            
+            <div *ngIf="contenido==204" style="color: white">client doesn't exist</div>
+            <!-- <div *ngIf="codeget==226" style="color: white">client exists</div>
+            <div *ngIf="codeget==500" style="color: red">client exists</div> -->
+    </div>
+</div>
+<br>
+<table class="table table-bordered table-striped table-hover">
+    <thead>
+        <tr>
+            <th class="text-center">Identification</th>
+            <th class="text-center">Address</th>
+            <th class="text-center">Email</th>
+            <th class="text-center">Name</th>
+            <th class="text-center">Phone</th>
+        </tr>
+    </thead>
+    <tbody>
+      <tr  class="">
+        <td class="text-center">{{contenido.identification}}</td>
+        <td class="text-center">{{contenido.address}}</td>
+        <td class="text-center">{{contenido.email}}</td>
+        <td class="text-center">{{contenido.name}}</td>
+        <td class="text-center">{{contenido.phone}}</td>
+      </tr>
+    </tbody>
+  </table>

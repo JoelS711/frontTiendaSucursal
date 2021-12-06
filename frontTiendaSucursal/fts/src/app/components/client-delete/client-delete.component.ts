@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClientDeleteComponent implements OnInit {
 
-  constructor() { }
+  constructor(private objetohttp: HttpClient) { }
 
   ngOnInit(): void {
   }
+  urlapi: string = "http://localhost:8081/api/clients";
+  ceduladelete!: string;
+  codedelete!: number;
+  eliminarCliente() {
+    this.objetohttp.delete(this.urlapi + "/identification/" + this.ceduladelete, {
+      observe: 'response'
+    }).subscribe(
+      (response: any) => {
 
+        this.codedelete = response.status;
+        this.ceduladelete = "";
+      }
+    );
+  }
 }

@@ -1,1 +1,36 @@
-<p>client-delete works!</p>
+<app-navbar></app-navbar>
+<div class="container col-lg-2">
+    <div class="form-group text-center">
+            <div class="form-group text-center">
+                <p style="color:white">
+                    <strong>DELETE CLIENT</strong>
+                </p>
+                <img src="assets/usuario.png" height="80" width="80" />
+            </div>
+            <br>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Identification" [(ngModel)]="ceduladelete">
+                <span class="input-group-text">
+                    <i *ngIf="ceduladelete!=undefined && ceduladelete!=''"
+                        class="fas fa-check correctovalidacion"></i>
+
+                    <i *ngIf="ceduladelete==undefined || ceduladelete==''"
+                        class="fas fa-times errorvalidacion"></i>
+                </span>
+            </div>
+
+            
+            <br>
+            <button (click)="eliminarCliente()" class="btn btn-primary btn-md" type="submit"
+            >DELETE</button>
+            <br/>
+
+            
+            <div *ngIf="codedelete==500" style="color: white">client doesn't exist</div>
+            <div *ngIf="codedelete==202" style="color: white">
+                successful deletion
+                </div>
+            <!-- <div *ngIf="codeget==500" style="color: red">client exists</div> -->
+    </div>
+</div>
+<br>

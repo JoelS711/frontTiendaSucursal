@@ -12,7 +12,7 @@ export class SalesComponent implements OnInit {
 
   constructor(private clientehttp: HttpClient, private toastr: ToastrService) { }
 
-  apiURL: string = "http://localhost:8084/api/";
+  apiURL: string = "http://localhost:8082/api/";
   apiURLClient: string = "http://localhost:8081/api/";
   apiURLProduct: string = "http://localhost:8080/api/";
   apiURLConsolidated: string = "http://localhost:8085/api/";
@@ -82,13 +82,13 @@ export class SalesComponent implements OnInit {
   calcPrecioProd(numproducto: number) {
     switch (numproducto) {
       case 1:
-        this.precioprod1 = this.cant1 * this.product1[0].precioventa;
+        this.precioprod1 = this.cant1 * this.product1[0].saleprice;
         break;
       case 2:
-        this.precioprod2 = this.cant2 * this.product2[0].precioventa;
+        this.precioprod2 = this.cant2 * this.product2[0].saleprice;
         break;
       case 3:
-        this.precioprod3 = this.cant3 * this.product3[0].precioventa;
+        this.precioprod3 = this.cant3 * this.product3[0].saleprice;
         break;
 
       default:
@@ -131,45 +131,45 @@ export class SalesComponent implements OnInit {
   postVenta() {
     if (this.precioprod1 != null && this.precioprod1 != undefined && this.precioprod1 != "") {
       let aux = {
-        "cantidadproducto": this.cant1,
-        "codigoproducto": this.codprod1,
-        "valoriva": this.precioprod1 * 0.19,
-        "valortotal": this.precioprod1,
-        "valorventa": (this.precioprod1 * 0.19) + this.precioprod1
+        "productquantity": this.cant1,
+        "codeproduct": this.codprod1,
+        "ivavalue": this.precioprod1 * 0.19,
+        "totalsale": this.precioprod1,
+        "salevalue": (this.precioprod1 * 0.19) + this.precioprod1
       }
       this.listadetalleventa.push(aux);
 
     }
     if (this.precioprod2 != null && this.precioprod2 != undefined && this.precioprod2 != "") {
       let aux = {
-        "cantidadproducto": this.cant2,
-        "codigoproducto": this.codprod2,
-        "valoriva": this.precioprod2 * 0.19,
-        "valortotal": this.precioprod2,
-        "valorventa": (this.precioprod2 * 0.19) + this.precioprod2
+        "productquantity": this.cant2,
+        "codeproduct": this.codprod2,
+        "ivavalue": this.precioprod2 * 0.19,
+        "totalsale": this.precioprod2,
+        "salevalue": (this.precioprod2 * 0.19) + this.precioprod2
       }
       this.listadetalleventa.push(aux);
 
     }
     if (this.precioprod3 != null && this.precioprod3 != undefined && this.precioprod3 != "") {
       let aux = {
-        "cantidadproducto": this.cant3,
-        "codigoproducto": this.codprod3,
-        "valoriva": this.precioprod3 * 0.19,
-        "valortotal": this.precioprod3,
-        "valorventa": (this.precioprod3 * 0.19) + this.precioprod3
+        "productquantity": this.cant3,
+        "codeproduct": this.codprod3,
+        "ivavalue": this.precioprod3 * 0.19,
+        "totalsale": this.precioprod3,
+        "salevalue": (this.precioprod3 * 0.19) + this.precioprod3
       }
       this.listadetalleventa.push(aux);
 
     }
     this.clientehttp.post(this.apiURL + "sales",
       {
-        "cedulacliente": this.cedulacliente,
-        "codigoventa": this.consecutivo,
-        "detalleventa": this.listadetalleventa,
-        "ivaventa": this.totaliva,
-        "totalventa": this.totalplusiva,
-        "valorventa": this.totalventa
+        "identification": this.cedulacliente,
+        "salecode": this.consecutivo,
+        "saledetail": this.listadetalleventa,
+        "ivasale": this.totaliva,
+        "totalsale": this.totalplusiva,
+        "salevalue": this.totalventa
       }, {
       observe: 'response'
     }).subscribe(

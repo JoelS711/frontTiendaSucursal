@@ -7,6 +7,7 @@ import { ClientConsultComponent } from './components/client-consult/client-consu
 import { ClientDeleteComponent } from './components/client-delete/client-delete.component';
 import { ClientUpdateComponent } from './components/client-update/client-update.component';
 import { SalesComponent } from './components/sales/sales.component';
+import { HomepageComponent } from './components/homepage/homepage.component';
 
 const routes: Routes = [
   { path: 'products', component: ProductsComponent },
@@ -16,7 +17,8 @@ const routes: Routes = [
   { path: 'client-delete', component: ClientDeleteComponent },
   { path: 'client-update', component: ClientUpdateComponent },
   { path: 'sales', component: SalesComponent },
-  { path: '', redirectTo: '/login', pathMatch: 'full' }
+  { path: 'homepage', component: HomepageComponent },
+  { path: '', redirectTo: '/homepage', pathMatch: 'full' }
 
 ];
 
@@ -25,4 +27,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComponents = [ProductsComponent, ClientCreateComponent, ClientConsultComponent, ClientDeleteComponent, ClientUpdateComponent, SalesComponent]
+export const routingComponents = [ProductsComponent, ClientCreateComponent, ClientConsultComponent, ClientDeleteComponent, ClientUpdateComponent, SalesComponent, HomepageComponent]

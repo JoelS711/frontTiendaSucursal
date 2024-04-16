@@ -11,6 +11,7 @@ import { LoginComponent } from './login/login.component';
 import { DataTablesModule } from 'angular-datatables';
 import { SalesComponent } from './components/sales/sales.component';
 import { ToastrModule } from 'ngx-toastr';
+import { HomepageComponent } from './components/homepage/homepage.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ToastrModule } from 'ngx-toastr';
     NavbarComponent,
     routingComponents,
     LoginComponent,
-    SalesComponent
+    SalesComponent,
+    HomepageComponent
     
   ],
   imports: [

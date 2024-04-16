@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
     if (this.user === this.correct_user) {
       this.correct = 1;
       if (this.pass === this.correct_pass) {
-        this.router.navigate(['/products']);
+        this.router.navigate(['/homepage']);
         } else {
         this.correct = 0;
       }

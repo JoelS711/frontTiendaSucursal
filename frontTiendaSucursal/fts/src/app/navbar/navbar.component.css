@@ -13,6 +13,12 @@
   
   .header__figure {
 	margin: 0;
+	transition: .1s ease;
+  }
+
+  .header__figure:hover {
+	transform: scale(1.1);
+	cursor: pointer;
   }
   
   .header__img {

@@ -49,12 +49,13 @@
 	border-radius: .2rem  .2rem 0 0;
 	.header__dropbtn{
 		color: #252850;
+		font-weight: bold;
 	}
   }
   .header__dropbtn {
 	color: #fff;
 	padding: .2rem;
-	transition: all 500ms ease;
+	transition: all 200ms ease;
 	position: relative;
   }
   
@@ -73,7 +74,7 @@
   
   .header__dropbtn--a {
 	display: block;
-	transition: all 500ms ease;
+	transition: all 400ms ease;
 	color: #252850;
 	padding: .2rem;
 	width: 100%;
